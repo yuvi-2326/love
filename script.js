@@ -1,0 +1,1 @@
+const text='I Love You Aanchal ❤️';let i=0;const e=document.getElementById('t');setInterval(()=>{if(i<=text.length){e.textContent=text.slice(0,i++);} },120);
