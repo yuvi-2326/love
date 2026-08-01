@@ -84,35 +84,33 @@ body{
 }
 
 .heart{
-    width:140px;
-    height:140px;
-    background:linear-gradient(145deg,#ff4b7d,#ff004f);
-    transform:rotate(-45deg);
-    animation:beat 1.2s infinite;
-    box-shadow:
-        0 0 35px #ff2d55,
-        0 0 80px rgba(255,45,85,.8);
-    position:relative;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: #ff2d55;
+    transform: rotate(-45deg);
+    animation: beat 1.2s infinite;
+    box-shadow: 0 0 40px rgba(255,45,85,.8);
 }
 
 .heart::before,
 .heart::after{
-    content:"";
-    position:absolute;
-    width:120px;
-    height:120px;
-    background:linear-gradient(145deg,#ff4b7d,#ff004f);
-    border-radius:50%;
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: inherit;
+    border-radius: 50%;
 }
 
 .heart::before{
-    top:-70px;
-    left:0;
+    top: -60px;
+    left: 0;
 }
 
 .heart::after{
-    left:70px;
-    top:0;
+    left: 60px;
+    top: 0;
 }
 
 @keyframes beat{
