@@ -4,6 +4,8 @@ const typingText = document.getElementById("typingText");
 const letterBtn = document.getElementById("letterBtn");
 const letter = document.getElementById("letter");
 
+const music = document.getElementById("bgMusic");
+
 const message = `Happy Girlfriend's Day!
 
 I'll never call you just my girlfriend...
@@ -42,106 +44,109 @@ for (let i = 0; i < 180; i++) {
 }
 
 function animateStars() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    stars.forEach(s => {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    stars.forEach(s=>{
+
         ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${s.o})`;
+        ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+        ctx.fillStyle=`rgba(255,255,255,${s.o})`;
         ctx.fill();
 
-        s.o += (Math.random() - 0.5) * 0.05;
+        s.o += (Math.random()-0.5)*0.05;
 
-        if (s.o < 0.2) s.o = 0.2;
-        if (s.o > 1) s.o = 1;
+        if(s.o<0.2) s.o=0.2;
+        if(s.o>1) s.o=1;
+
     });
 
     requestAnimationFrame(animateStars);
+
 }
 
 animateStars();
 
-loading.addEventListener("click", () => {
+loading.addEventListener("click",()=>{
 
-    loading.style.opacity = "0";
+    music.volume=0.6;
+    music.loop=true;
 
-    setTimeout(() => {
+    music.play().catch(()=>{});
 
-        loading.style.display = "none";
+    loading.style.opacity="0";
 
-        messageBox.style.display = "block";
+    setTimeout(()=>{
 
-        messageBox.style.opacity = "1";
+        loading.style.display="none";
+
+        messageBox.style.display="block";
+        messageBox.style.opacity="1";
 
         typeWriter();
 
-    }, 800);
+    },800);
 
 });
 
-let i = 0;
+let i=0;
 
-function typeWriter() {
+function typeWriter(){
 
-    if (i < message.length) {
+    if(i<message.length){
 
-        if (message.charAt(i) === "\n") {
-            typingText.innerHTML += "<br>";
-        } else {
-            typingText.innerHTML += message.charAt(i);
+        if(message.charAt(i)==="\n"){
+            typingText.innerHTML+="<br>";
+        }else{
+            typingText.innerHTML+=message.charAt(i);
         }
 
         i++;
 
-        setTimeout(typeWriter, 45);
+        setTimeout(typeWriter,45);
 
-    } else {
+    }else{
 
-        letterBtn.style.display = "block";
+        letterBtn.style.display="block";
 
     }
 
 }
 
-letterBtn.onclick = () => {
+letterBtn.onclick=()=>{
 
-    letter.style.display = "block";
+    letter.style.display="block";
+    letter.style.opacity="1";
 
-    letter.style.opacity = "1";
-
-    messageBox.style.display = "none";
-
-    letterBtn.style.display = "none";
+    messageBox.style.display="none";
+    letterBtn.style.display="none";
 
 };
 
-window.onresize = () => {
+window.onresize=()=>{
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
 
 };
 
 /* -------- Rose Petals -------- */
 
-const petals = document.getElementById("petals");
+const petals=document.getElementById("petals");
 
 function createPetal(){
 
-    const petal = document.createElement("div");
+    const petal=document.createElement("div");
 
-    petal.className = "petal";
+    petal.className="petal";
 
-    petal.style.left = Math.random()*100 + "vw";
+    petal.style.left=Math.random()*100+"vw";
 
-    petal.style.animationDuration =
-    (5 + Math.random()*5) + "s";
+    petal.style.animationDuration=(5+Math.random()*5)+"s";
 
-    petal.style.opacity =
-    Math.random();
+    petal.style.opacity=Math.random();
 
-    petal.style.transform =
-    `scale(${0.5 + Math.random()})`;
+    petal.style.transform=`scale(${0.5+Math.random()})`;
 
     petals.appendChild(petal);
 
@@ -154,30 +159,3 @@ function createPetal(){
 }
 
 setInterval(createPetal,350);
-
-const music=document.getElementById("bgMusic");
-const musicBtn=document.getElementById("musicBtn");
-
-let playing=false;
-
-musicBtn.onclick=()=>{
-
-if(!playing){
-
-music.play();
-
-musicBtn.innerHTML="⏸ Pause";
-
-playing=true;
-
-}else{
-
-music.pause();
-
-musicBtn.innerHTML="🎵 Music";
-
-playing=false;
-
-}
-
-};
