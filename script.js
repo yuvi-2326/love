@@ -71,6 +71,8 @@ loading.addEventListener("click", () => {
 
         messageBox.style.display = "block";
 
+        messageBox.style.opacity = "1";
+
         typeWriter();
 
     }, 800);
@@ -104,6 +106,8 @@ function typeWriter() {
 letterBtn.onclick = () => {
 
     letter.style.display = "block";
+
+    letter.style.opacity = "1";
 
     messageBox.style.display = "none";
 
