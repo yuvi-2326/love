@@ -106,12 +106,12 @@ body{
 }
 
 .heart::before{
-    top:-60px;
+    top:-70px;
     left:0;
 }
 
 .heart::after{
-    left:60px;
+    left:70px;
     top:0;
 }
 
