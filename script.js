@@ -117,3 +117,36 @@ window.onresize = () => {
     canvas.height = window.innerHeight;
 
 };
+
+/* -------- Rose Petals -------- */
+
+const petals = document.getElementById("petals");
+
+function createPetal(){
+
+    const petal = document.createElement("div");
+
+    petal.className = "petal";
+
+    petal.style.left = Math.random()*100 + "vw";
+
+    petal.style.animationDuration =
+    (5 + Math.random()*5) + "s";
+
+    petal.style.opacity =
+    Math.random();
+
+    petal.style.transform =
+    `scale(${0.5 + Math.random()})`;
+
+    petals.appendChild(petal);
+
+    setTimeout(()=>{
+
+        petal.remove();
+
+    },10000);
+
+}
+
+setInterval(createPetal,350);
