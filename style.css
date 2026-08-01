@@ -6,9 +6,9 @@
 
 body{
     overflow:hidden;
-    background:#050505;
-    color:white;
     font-family:'Poppins',sans-serif;
+    background:radial-gradient(circle at center,#15152d 0%,#090912 45%,#000 100%);
+    color:white;
 }
 
 #stars{
@@ -52,14 +52,28 @@ body{
 
 .moon{
     position:absolute;
-    top:60px;
-    right:80px;
-    width:120px;
-    height:120px;
+    top:50px;
+    right:70px;
+    width:140px;
+    height:140px;
     border-radius:50%;
-    background:#fff8dc;
-    box-shadow:0 0 80px white;
-    opacity:.9;
+    background:radial-gradient(circle,#fffdf5 10%,#f8eec4 70%,#d7c98c 100%);
+    box-shadow:
+        0 0 40px rgba(255,255,220,.8),
+        0 0 90px rgba(255,255,220,.5),
+        0 0 180px rgba(255,255,220,.2);
+    animation:moonGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes moonGlow{
+    from{
+        transform:scale(1);
+        filter:brightness(1);
+    }
+    to{
+        transform:scale(1.04);
+        filter:brightness(1.2);
+    }
 }
 
 .heart-container{
@@ -70,12 +84,14 @@ body{
 }
 
 .heart{
-    width:120px;
-    height:120px;
-    background:#ff2d55;
+    width:140px;
+    height:140px;
+    background:linear-gradient(145deg,#ff4b7d,#ff004f);
     transform:rotate(-45deg);
-    animation:beat 1.1s infinite;
-    box-shadow:0 0 40px #ff2d55;
+    animation:beat 1.2s infinite;
+    box-shadow:
+        0 0 35px #ff2d55,
+        0 0 80px rgba(255,45,85,.8);
     position:relative;
 }
 
@@ -85,7 +101,7 @@ body{
     position:absolute;
     width:120px;
     height:120px;
-    background:#ff2d55;
+    background:inherit;
     border-radius:50%;
 }
 
@@ -109,17 +125,28 @@ body{
 
 #messageBox{
     position:absolute;
-    width:90%;
-    max-width:750px;
     left:50%;
     top:50%;
     transform:translate(-50%,-50%);
-    text-align:center;
+    width:92%;
+    max-width:760px;
+
     display:none;
-    padding:30px;
-    border-radius:20px;
+
+    padding:45px;
+
+    border-radius:28px;
+
     background:rgba(255,255,255,.08);
-    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(22px);
+
+    box-shadow:
+        0 0 60px rgba(255,120,180,.15);
+
+    text-align:center;
 }
 
 #messageBox h1{
