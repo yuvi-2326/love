@@ -101,7 +101,7 @@ body{
     position:absolute;
     width:120px;
     height:120px;
-    background:inherit;
+    background:linear-gradient(145deg,#ff4b7d,#ff004f);
     border-radius:50%;
 }
 
