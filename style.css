@@ -311,3 +311,24 @@ floatCard 4s ease-in-out infinite 1.5s;
 animation:fadeZoom 1s ease;
 box-shadow:0 0 60px rgba(255,105,180,.3);
 }
+
+#musicBtn{
+position:fixed;
+top:25px;
+left:25px;
+padding:12px 20px;
+border:none;
+border-radius:30px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+z-index:999;
+}
+
+#musicBtn:hover{
+transform:scale(1.08);
+background:#ff4d88;
+}
