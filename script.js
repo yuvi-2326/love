@@ -117,3 +117,45 @@ window.onresize = () => {
     canvas.height = window.innerHeight;
 
 };
+
+/* -------- Rose Petals -------- */
+
+#petals{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:2;
+}
+
+.petal{
+    position:absolute;
+    width:18px;
+    height:18px;
+    background:#ff5c8d;
+    border-radius:60% 40% 60% 40%;
+    opacity:.8;
+    animation:fall linear forwards;
+    box-shadow:0 0 8px rgba(255,92,141,.5);
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-50px) rotate(0deg);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh) rotate(720deg);
+opacity:0;
+}
+
+}
