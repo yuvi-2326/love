@@ -402,3 +402,41 @@ text-align:center;
 100%{opacity:.5;}
 
 }
+
+.shooting-star{
+
+position:fixed;
+
+width:2px;
+
+height:120px;
+
+background:linear-gradient(white,transparent);
+
+transform:rotate(45deg);
+
+animation:shoot 1.5s linear forwards;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+@keyframes shoot{
+
+0%{
+
+opacity:1;
+transform:translate(0,0) rotate(45deg);
+
+}
+
+100%{
+
+opacity:0;
+transform:translate(500px,500px) rotate(45deg);
+
+}
+
+}
