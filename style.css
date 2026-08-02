@@ -271,33 +271,19 @@ box-shadow:0 0 40px rgba(0,0,0,.5);
 }
 
 #finalMessage{
-    font-size:38px;
-    width:90%;
-    max-width:350px;
-    left:49.5%;
+    width:100%;
+    max-width:none;
+    padding:0 20px;
+    box-sizing:border-box;
+
+    top:50%;
+    left:50%;
     transform:translate(-50%,-50%);
-    text-align:center;
+
+    font-size:28px;
     line-height:1.3;
-    padding:20px;
 
-    #finalMessage div{
-    width:100%;
     text-align:center;
-}
-    #finalMessage div{
-    width:100%;
-    text-align:center;
-}
-
-#finalMessage div:first-child{
-    position:relative;
-    left:-8px;
-}
-
-#finalMessage div:last-child{
-    position:relative;
-    left:-5px;
-}
 }
 
 #letterBtn{
@@ -481,6 +467,12 @@ z-index:9999;
 
 text-align:center;
 
+}
+
+#finalMessage div{
+    display:block;
+    width:100%;
+    text-align:center;
 }
 
 @keyframes glow{
