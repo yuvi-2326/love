@@ -332,3 +332,35 @@ z-index:999;
 transform:scale(1.08);
 background:#ff4d88;
 }
+
+.burst-heart{
+
+position:fixed;
+
+font-size:24px;
+
+pointer-events:none;
+
+animation:burst 1.6s linear forwards;
+
+z-index:999;
+
+}
+
+@keyframes burst{
+
+0%{
+
+opacity:1;
+transform:translate(0,0) scale(1);
+
+}
+
+100%{
+
+opacity:0;
+transform:translate(var(--x),var(--y)) scale(0);
+
+}
+
+}
