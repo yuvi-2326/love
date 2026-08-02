@@ -364,3 +364,41 @@ transform:translate(var(--x),var(--y)) scale(0);
 }
 
 }
+
+#finalMessage{
+
+position:fixed;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+font-size:60px;
+
+font-family:'Great Vibes',cursive;
+
+color:#ff5e9c;
+
+text-shadow:0 0 35px #ff5e9c;
+
+display:none;
+
+animation:glow 2s infinite;
+
+z-index:9999;
+
+text-align:center;
+
+}
+
+@keyframes glow{
+
+0%{opacity:.5;}
+
+50%{opacity:1;}
+
+100%{opacity:.5;}
+
+}
