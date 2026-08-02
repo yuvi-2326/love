@@ -5,7 +5,8 @@
 }
 
 body{
-    overflow:hidden;
+    overflow-x:hidden;
+    overflow-y:auto;
     font-family:'Poppins',sans-serif;
     background:radial-gradient(circle at center,#15152d 0%,#090912 45%,#000 100%);
     color:white;
@@ -189,19 +190,43 @@ body{
 }
 
 #letter{
-    display:none;
-    position:absolute;
-    width:90%;
-    max-width:700px;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    background:white;
-    color:#333;
-    padding:40px;
-    border-radius:20px;
-    line-height:2;
-    text-align:center;
+
+display:none;
+
+position:fixed;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+width:90%;
+
+max-width:700px;
+
+max-height:85vh;
+
+overflow-y:auto;
+
+-webkit-overflow-scrolling:touch;
+
+overscroll-behavior:contain;
+
+background:white;
+
+color:#333;
+
+padding:40px;
+
+border-radius:20px;
+
+line-height:2;
+
+text-align:center;
+
+box-shadow:0 0 40px rgba(0,0,0,.5);
+
 }
 
 #letter h2{
@@ -211,18 +236,55 @@ body{
 
 @media(max-width:768px){
 
+#messageBox{
+    width:95%;
+    padding:25px;
+}
+
 #messageBox h1{
-font-size:38px;
+    font-size:36px;
+}
+
+#messageBox h3{
+    font-size:18px;
 }
 
 #typingText{
-font-size:17px;
+    font-size:16px;
+    line-height:1.8;
+}
+
+#letter{
+
+    width:94%;
+
+    max-height:80vh;
+
+    padding:25px;
+
+    font-size:16px;
+
+}
+
+#letter h2{
+    font-size:28px;
+}
+
+#finalMessage{
+    font-size:38px;
+}
+
+#letterBtn{
+    bottom:20px;
+    font-size:16px;
+    padding:14px 25px;
 }
 
 .moon{
-width:80px;
-height:80px;
-right:20px;
+    width:80px;
+    height:80px;
+    right:20px;
+    top:20px;
 }
 
 }
@@ -370,10 +432,12 @@ transform:translate(var(--x),var(--y)) scale(0);
 position:fixed;
 
 top:50%;
-
 left:50%;
-
 transform:translate(-50%,-50%);
+
+max-width:90%;
+
+padding:20px;
 
 font-size:60px;
 
