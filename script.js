@@ -144,7 +144,7 @@ letterBtn.onclick=()=>{
 
 document.getElementById("finalMessage").style.display="block";
 
-},12000);
+},7000);
 
 };
 
