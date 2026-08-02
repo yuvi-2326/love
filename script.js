@@ -69,19 +69,38 @@ animateStars();
 
 loading.addEventListener("click",()=>{
 
-    music.volume=0.6;
-    music.loop=true;
+    music.volume = 0;
+    music.loop = true;
 
-    music.play().catch(()=>{});
+    music.play().catch(err => console.log(err));
 
-    loading.style.opacity="0";
+    let vol = 0;
+
+    const fade = setInterval(() => {
+
+        if (vol < 0.6) {
+
+            vol += 0.02;
+
+            music.volume = vol;
+
+        } else {
+
+            clearInterval(fade);
+
+        }
+
+    }, 100);
+
+    loading.style.opacity = "0";
 
     setTimeout(()=>{
 
-        loading.style.display="none";
+        loading.style.display = "none";
 
-        messageBox.style.display="block";
-        messageBox.style.opacity="1";
+        messageBox.style.display = "block";
+
+        messageBox.style.opacity = "1";
 
         typeWriter();
 
@@ -159,3 +178,35 @@ function createPetal(){
 }
 
 setInterval(createPetal,350);
+
+const heart = document.getElementById("heart");
+
+heart.addEventListener("click",()=>{
+
+    for(let i=0;i<25;i++){
+
+        const h=document.createElement("div");
+
+        h.className="burst-heart";
+
+        h.innerHTML="❤️";
+
+        h.style.left=(window.innerWidth/2)+"px";
+
+        h.style.top=(window.innerHeight/2)+"px";
+
+        h.style.setProperty("--x",(Math.random()*600-300)+"px");
+
+        h.style.setProperty("--y",(Math.random()*600-300)+"px");
+
+        document.body.appendChild(h);
+
+        setTimeout(()=>{
+
+            h.remove();
+
+        },1600);
+
+    }
+
+});
