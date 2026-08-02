@@ -140,6 +140,12 @@ letterBtn.onclick=()=>{
     messageBox.style.display="none";
     letterBtn.style.display="none";
 
+    setTimeout(()=>{
+
+document.getElementById("finalMessage").style.display="block";
+
+},12000);
+
 };
 
 window.onresize=()=>{
@@ -210,3 +216,25 @@ heart.addEventListener("click",()=>{
     }
 
 });
+
+function shootingStar(){
+
+const s=document.createElement("div");
+
+s.className="shooting-star";
+
+s.style.top=Math.random()*40+"vh";
+
+s.style.left=Math.random()*30+"vw";
+
+document.body.appendChild(s);
+
+setTimeout(()=>{
+
+s.remove();
+
+},1500);
+
+}
+
+setInterval(shootingStar,6000);
