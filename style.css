@@ -284,6 +284,20 @@ box-shadow:0 0 40px rgba(0,0,0,.5);
     width:100%;
     text-align:center;
 }
+    #finalMessage div{
+    width:100%;
+    text-align:center;
+}
+
+#finalMessage div:first-child{
+    position:relative;
+    left:-8px;
+}
+
+#finalMessage div:last-child{
+    position:relative;
+    left:-5px;
+}
 }
 
 #letterBtn{
